@@ -13,10 +13,23 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { NavComponent } from './nav/nav.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 @NgModule({
-  declarations: [AppComponent, EventosComponent, PalestrantesComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    EventosComponent,
+    PalestrantesComponent,
+    NavComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CollapseModule.forRoot(),
+  ],
   providers: [
     provideClientHydration(withEventReplay()),
     provideHttpClient(withInterceptorsFromDi()),
